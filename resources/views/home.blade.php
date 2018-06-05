@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">Te registraste correctamente</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -13,8 +13,9 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    You are logged in!
+                    <img src="/storage/avatar/{{$user->avatar}}" alt="">
+                    <h1>¡Bienvenido {{Auth::user()->name}} {{Auth::user()->last_name}}!</h1>
+                    <h5>Tu usuario es {{Auth::user()->user}}</h5>
                 </div>
             </div>
         </div>

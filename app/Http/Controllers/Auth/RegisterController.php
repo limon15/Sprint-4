@@ -76,8 +76,13 @@ class RegisterController extends Controller
             'pass' => Hash::make($data['pass']),
             'phone' => $data['phone'],
             'avatar' => $data['avatar']
-
         ]);
     }
-
-}
+    public function store(Request $request) {
+      $user= $request->user();
+      $file = $request->file("avatar");
+      $avatar = $user->email.".".$file->extension();
+      $folder = "avatar";
+      $path = $file->storePubliclyAs($folder, $avatar);
+    }
+  }
