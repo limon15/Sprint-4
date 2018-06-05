@@ -15,4 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/index', 'indexController@hayConexion');
+Auth::routes();
+Route::get('/index', '\App\Http\Controllers\Auth\RegisterController@showRegistrationForm');
+
+Route::get('/home', 'HomeController@index')->name('home');
