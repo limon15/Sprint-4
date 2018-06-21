@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ 'FarmaciaDeTurno' }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -24,8 +24,11 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
+                <div>
+                  <img src="../../../public/images/logo-farmacia.png" width="150" alt="">
+                </div>
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    {{ 'FARMACIA DE TURNO' }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -42,10 +45,10 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Ingresar') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                <a class="nav-link" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
                             </li>
                         @else
                             <li class="nav-item dropdown">
@@ -74,6 +77,42 @@
         <main class="py-4">
             @yield('content')
         </main>
+
+        <div class="">
+          <div class="wrap">
+          <h2 class="FAQS">Preguntas frecuentes</h2>
+          <details>
+            <summary>¿Qué información puedo obtener en esta web?</summary>
+            <p>En nuestra web podrás:
+              <ul class="listaFAQ">
+                <li><strong>Localizar las farmacias de turno más cercanas</strong> a tu domicilio.</li>
+                <li>Obtener ubicación, teléfono y otros <strong>datos útiles de las farmacias que buscas</strong>.</li>
+                <li><strong>Compartir por redes sociales o Whatsapp</strong> la información que buscaste.</li>
+                <li><strong>Guardar las farmacias que buscaste</strong> para obtener rápidamente su información desde tu perfil. También vas a poder marcarlas como "Visitada".</li>
+                <li><strong>Hacer tu propia valoración de la farmacia que visitaste</strong> y ver cómo la puntúan otros usuarios.</li>
+                <li>Subscribirte a nuestro newsletter y <strong>recibir ofertas especiales de farmacias de tu zona</strong>.</li>
+                <li>Consultar <strong>información de entidades sanitarias</strong>.</li>
+              </ul></p>
+          </details>
+          <details>
+             <summary>¿Cómo localizo la farmacia de turno más cercana a mi domicilio?</summary>
+             <p>Ingresá a nuestra web<a href="https://www.farmaciasdeturno.com/">Farmacias de Turno.</a><br>Aplicá los prefiltros necesarios, podrás buscar por nombre de farmacia y/o zona.</p>
+          </details>
+          <details>
+             <summary>¿Cómo puntúo una farmacia?</summary>
+             <p>Antes que nada <a href="https://www.farmaciasdeturno.com/login.html">iniciá sesión o registrate.</a>Sólo los usuarios registrados podrán puntuar una farmacia.
+               Para poder valorar una farmacia tendrás que previamente buscarla y marcarla como "VISITADA", luego podrás valorarla con una puntuación de 1 a 5 estrellas y si querés, agregar un comentario sobre tu experiencia.</p>
+          </details>
+          <details>
+             <summary>¿Cómo puedo acceder fácilmente a descuentos y ofertas de farmacias cercanas?</summary>
+             <p>¡Muy fácil! Subscribite a nuestro<a href="https://www.farmaciasdeturno.com/login.html">newsletter</a>y vas a estar recibiendo ofertas y descuentos en tu zona ¡Especiales para vos ♥!</p>
+          </details>
+        <div class="image-bottom">
+            <h3>¿Dudas, quejas, recomendaciones?<br> Contactanos a través de nuestro formulario.</h3>
+        </div>
+        </div>
+      </div>
+
     </div>
 </body>
 </html>

@@ -19,3 +19,7 @@ Auth::routes();
 Route::get('/index', '\App\Http\Controllers\Auth\RegisterController@showRegistrationForm');
 
 Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/import', 'ImportController@import');
+Route::get('importExport', 'ImportController@importExport');
+Route::get('downloadExcel/{type}', 'ImportController@downloadExcel');
+Route::post('importExcel', 'ImportController@importExcel');

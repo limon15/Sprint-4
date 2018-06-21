@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Registrate') }}</div>
+                <div class="card-header">{{ __('CREÁ UNA CUENTA') }}</div>
 
                 <div class="card-body">
                     <form method="POST" enctype="multipart/form-data" action="{{ route('register') }}">
