@@ -16,18 +16,18 @@ class CreateFarmaciasTable extends Migration
        Schema::create('farmacias', function(Blueprint $table)
        {
          $table->increments('id');
-         $table->string('X');
-         $table->string('Y');
-         // $table->integer('FARM_ID')->unsigned();
-         // $table->string('OBJETO');
-         // $table->string('CALLE');
-         // $table->integer('ALTURA')->unsigned();
-         // $table->string('DIREC_NORM');
-         // $table->string('DIREC_ARCG');
-         // $table->string('TELEFONO')->nullable();
-         // $table->string('OBS_TELEFONO')->nullable();
-         // $table->string('BARRIO');
-         // $table->integer('COMUNA')->unsigned();
+         $table->string('latitud');
+         $table->string('longitud');
+         $table->integer('farm_id')->unsigned()->unique();
+         $table->string('objeto');
+         $table->string('calle');
+         $table->integer('altura')->unsigned();
+         $table->string('direc_norm');
+         $table->string('direc_arcg');
+         $table->string('telefono')->nullable();
+         $table->string('obs_telefono')->nullable();
+         $table->string('barrio');
+         $table->integer('comuna')->unsigned();
          $table->timestamps();
        });
      }
